@@ -8,6 +8,34 @@
 //   reverseInt(-15) === -51
 //   reverseInt(-90) === -9
 
-function reverseInt(n) {}
+// APRIL 13th 2020
+// function reverseInt(n) {
+//   n = n
+//     .toString()
+//     .split("")
+//     .reverse();
+
+//   if (n[n.length - 1] === "-") {
+//     n.unshift(n.pop());
+//   }
+
+//   return parseInt(n.join(""));
+// }
+
+// SOLUTION #2
+function reverseInt(n) {
+  const reversed = n
+    .toString()
+    .split("")
+    .reverse()
+    .join("");
+
+  if (n < 0) {
+    return parseInt(reversed) * -1;
+  }
+
+  return parseInt(reversed);
+}
+// hi
 
 module.exports = reverseInt;
