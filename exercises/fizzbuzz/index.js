@@ -12,6 +12,8 @@
 //   4
 //   buzz
 
+// APRIL 16th 2020
+
 function fizzBuzz(n) {
   for (let i = 1; i <= n; i++) {
     if (i % 3 === 0 && i % 5 === 0) {

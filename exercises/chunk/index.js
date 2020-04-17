@@ -8,6 +8,24 @@
 // chunk([1, 2, 3, 4, 5], 4) --> [[ 1, 2, 3, 4], [5]]
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
-function chunk(array, size) {}
+// APRIL 16th 2020
+// KAITLYN! REDO THIS ONE
+
+function chunk(array, size) {
+  let finalArr = [];
+
+  for (let i = 0; i < array.length; i++) {
+    if (
+      !finalArr[finalArr.length - 1] ||
+      finalArr[finalArr.length - 1].length === size
+    ) {
+      finalArr.push([array[i]]);
+    } else {
+      finalArr[finalArr.length - 1].push(array[i]);
+    }
+  }
+
+  return finalArr;
+}
 
 module.exports = chunk;
