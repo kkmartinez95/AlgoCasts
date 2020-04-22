@@ -12,20 +12,23 @@
 // KAITLYN! REDO THIS ONE
 
 function chunk(array, size) {
-  let finalArr = [];
+  let chunked = [];
 
   for (let i = 0; i < array.length; i++) {
+    // check if the last element in chunked is full, or if the last element exists
     if (
-      !finalArr[finalArr.length - 1] ||
-      finalArr[finalArr.length - 1].length === size
+      !chunked[chunked.length - 1] ||
+      chunked[chunked.length - 1].length === size
     ) {
-      finalArr.push([array[i]]);
+      chunked.push([array[i]]);
     } else {
-      finalArr[finalArr.length - 1].push(array[i]);
+      chunked[chunked.length - 1].push(array[i]);
     }
+    // if it is full or exists, then push into chunked, a new array with the current element
+    // else, push the current element into the last element in chunked
   }
 
-  return finalArr;
+  return chunked;
 }
 
 module.exports = chunk;

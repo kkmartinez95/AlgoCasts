@@ -14,6 +14,26 @@
 //       ' ### '
 //       '#####'
 
-function pyramid(n) {}
+// APRIL 16th, 2020
+// I DO NOT UNDERSTAND THIS...
+function pyramid(n) {
+  // rows = n
+  // columns = (n*2) - 1;
+
+  const midpoint = Math.floor((n * 2 - 1) / 2);
+
+  for (let row = 0; row < n; row++) {
+    let level = "";
+    for (let column = 0; column < n * 2 - 1; column++) {
+      if (midpoint - row <= column && midpoint + row >= column) {
+        // the conditional is confusing me
+        level += "#";
+      } else {
+        level += " ";
+      }
+    }
+    console.log(level);
+  }
+}
 
 module.exports = pyramid;

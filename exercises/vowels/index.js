@@ -7,6 +7,18 @@
 //   vowels('Why do you ask?') --> 4
 //   vowels('Why?') --> 0
 
-function vowels(str) {}
+// APRIL 17th, 2020
+function vowels(str) {
+  str = str.toLowerCase();
+  const vowelLetters = "aeiou";
+  let count = 0;
+
+  for (let char of str) {
+    if (vowelLetters.includes(char)) {
+      count++;
+    }
+  }
+  return count;
+}
 
 module.exports = vowels;
