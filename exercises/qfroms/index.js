@@ -12,8 +12,32 @@
 //     q.remove(); // returns 1
 //     q.remove(); // returns 2
 
-const Stack = require('./stack');
+// REVIEW THIS!! APRIL 22, 2020
+const Stack = require("./stack");
 
-class Queue {}
+class Queue {
+  constructor() {
+    this.first = new Stack();
+    this.second = new Stack();
+  }
+  add(val) {
+    this.first.push(val);
+  }
+  remove() {
+    while (this.first.peek()) {
+      this.second.push(this.first.pop());
+    }
+
+    let firstOut = this.second.pop();
+
+    while (this.second.peek()) {
+      this.first.push(this.second.pop());
+    }
+    return firstOut;
+  }
+  peek() {
+    return this.first.data[0];
+  }
+}
 
 module.exports = Queue;
