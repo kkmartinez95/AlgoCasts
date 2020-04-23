@@ -22,8 +22,23 @@
 //    q.remove() // 2
 //    q.remove() // 'There'
 
-const Queue = require('./queue');
+// APRIL 22nd, 2020
+const Queue = require("./queue");
 
-function weave(sourceOne, sourceTwo) {}
+function weave(sourceOne, sourceTwo) {
+  let newQueue = new Queue();
+
+  while (sourceOne.data.length || sourceTwo.data.length) {
+    if (sourceOne.peek()) {
+      newQueue.add(sourceOne.remove());
+    }
+
+    if (sourceTwo.peek()) {
+      newQueue.add(sourceTwo.remove());
+    }
+  }
+  console.log(newQueue);
+  return newQueue;
+}
 
 module.exports = weave;
